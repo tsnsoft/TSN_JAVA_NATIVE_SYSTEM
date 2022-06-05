@@ -24,3 +24,7 @@
 https://github.com/java-native-access/jna
 
 https://jdk.java.net/panama/17/
+
+```
+/opt/dev/jdk-17/bin/java --module-path /opt/dev/jdk-17 --add-modules jdk.incubator.foreign -Dforeign.restricted=permit --enable-native-access=ALL-UNNAMED -jar ./dist/TSN_JAVA_NATIVE_SYSTEM.jar
+```
