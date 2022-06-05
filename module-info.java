@@ -1,0 +1,1 @@
+requires jdk.incubator.foreign
