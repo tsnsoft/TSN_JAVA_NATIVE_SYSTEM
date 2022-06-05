@@ -8,6 +8,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.lang.invoke.MethodType;
 import java.nio.charset.StandardCharsets;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import jdk.incubator.foreign.CLinker;
 import jdk.incubator.foreign.FunctionDescriptor;
@@ -67,13 +68,13 @@ public class TSN_JAVA_NATIVE_SYSTEM {
         String msg = "Всем привет!\nЭто пример прямого системного вызова ядра Linux!\n";
         int sys_write = 1, handle_stdout = 1, number_bytes = (msg.getBytes(StandardCharsets.UTF_8).length);
         c.syscall(sys_write, handle_stdout, msg, number_bytes); // Пример системного вызова syscall
-
     }
 
     // Пример работы с классами jdk.incubator.foreign
     // https://jdk.java.net/panama/17/
     public static void incubatorForeignDemo() {
-        System.loadLibrary("hello");
+        //System.loadLibrary("hello");
+        System.load(Paths.get("").toAbsolutePath().toString() + "/libhello.so");
         var libraryLookup = SymbolLookup.loaderLookup().lookup("printHello");
         if (libraryLookup.isPresent()) {
             var memoryAddress = libraryLookup.get();
