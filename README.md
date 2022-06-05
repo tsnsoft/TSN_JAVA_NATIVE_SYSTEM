@@ -1,5 +1,5 @@
 # TSN_JAVA_NATIVE_SYSTEM
-Пример нативной работы с операционной системой на Java в Linux
+Примеры нативной работы с операционной системой на Java в Linux
 
 ![srcreenshot](screenshot1.png)
 
