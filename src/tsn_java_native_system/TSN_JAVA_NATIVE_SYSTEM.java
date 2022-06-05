@@ -19,7 +19,6 @@ public class TSN_JAVA_NATIVE_SYSTEM {
     private static final String OS_ARCH = System.getProperty("os.arch").toLowerCase();
 
     public interface CStdLib extends Library {
-
         int syscall(int number, Object... args);
     }
 
@@ -29,7 +28,7 @@ public class TSN_JAVA_NATIVE_SYSTEM {
             jnaNativeDemo();
             incubatorForeignDemo();
         } else {
-            System.out.println("Неподдерживаемая ОС для jnaNativeDemo, только для Linux x64 !");
+            System.out.println("Неподдерживаемая ОС, только для Linux x64 !");
         }
     }
 
